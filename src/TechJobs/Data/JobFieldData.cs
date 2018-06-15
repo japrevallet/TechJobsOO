@@ -27,7 +27,7 @@ namespace TechJobs.Data
                           where field.ID == id
                           select field;
 
-            return results.Single();
+            return results.SingleOrDefault(); //OrDefault is allowing me to run JobsFieldData to take null values without crashing while I test
         }
 
         internal TField AddUnique(string fieldValue)

@@ -2,6 +2,7 @@
 using TechJobs.Data;
 using TechJobs.ViewModels;
 using TechJobs.Models;
+using System;
 
 namespace TechJobs.Controllers
 {
@@ -20,9 +21,8 @@ namespace TechJobs.Controllers
         public IActionResult Index(int id)
         {
             // TODO #1 - get the Job with the given ID and pass it into the view
-
-            var jobID = jobData.Find(id);
-            return View(jobID);
+            Job selectedJob = jobData.Find(id);
+            return View(selectedJob);
         }
 
         public IActionResult New()
